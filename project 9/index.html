@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Gearhouse Auto Care | Repairs and detailing you can trust</title>
+    <meta
+      name="description"
+      content="Honest car repairs and professional detailing. Get an instant estimate and book your visit online."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <!-- Shared car drawing used by the before and after slider -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <symbol id="car" viewBox="0 0 600 300">
+        <ellipse cx="300" cy="262" rx="270" ry="14" fill="rgba(0,0,0,0.25)" />
+        <path
+          d="M40 200 L60 160 Q80 140 130 135 L190 100 Q215 85 260 85 L390 85 Q430 85 455 105 L500 140 Q545 145 560 175 L565 205 Q565 222 548 222 L52 222 Q38 222 40 200 Z"
+          style="fill: var(--body)"
+        />
+        <path
+          d="M205 112 Q215 102 245 102 L300 102 L300 138 L172 138 Z"
+          style="fill: var(--glass)"
+        />
+        <path
+          d="M315 102 L385 102 Q410 104 430 124 L445 138 L315 138 Z"
+          style="fill: var(--glass)"
+        />
+        <circle cx="150" cy="224" r="40" fill="#1b1b1b" />
+        <circle cx="150" cy="224" r="19" style="fill: var(--rim)" />
+        <circle cx="450" cy="224" r="40" fill="#1b1b1b" />
+        <circle cx="450" cy="224" r="19" style="fill: var(--rim)" />
+      </symbol>
+    </svg>
+
+    <header>
+      <div class="w">
+        <a class="logo" href="#top">
+          Gearhouse Auto Care
+          <small>Repairs and detailing</small>
+        </a>
+        <nav aria-label="Main">
+          <a href="#quote">Estimate</a>
+          <a href="#results">Results</a>
+          <a href="#faq">FAQ</a>
+          <a class="btn sm" href="#book">Book a visit</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div id="top" class="w hero">
+        <h1>Honest repairs. <em>Showroom shine.</em></h1>
+        <p>
+          Fair prices, no surprises and a car that looks as good as it drives.
+          Get an instant estimate, then book online.
+        </p>
+        <a class="btn" href="#quote">Get an estimate</a>
+        <a class="btn ghost" href="#book">Book a visit</a>
+        <div class="trust">
+          <span>Written quote before any work</span>
+          <span>12-month parts and labor warranty</span>
+          <span>Loan cars available</span>
+        </div>
+      </div>
+
+      <section id="quote">
+        <div class="w">
+          <h2>Instant estimate</h2>
+          <p class="lead">
+            Choose your vehicle size, pick the services you need and see a
+            price range straight away.
+          </p>
+
+          <div class="est">
+            <div class="card">
+              <h3>Your vehicle</h3>
+              <div class="chips" id="sizes" aria-label="Vehicle size"></div>
+
+              <h3 style="margin-top: 20px">Parts and finish level</h3>
+              <div class="chips" id="levels" aria-label="Level"></div>
+              <p class="note">
+                Level changes the price of oil, brakes, batteries and detailing.
+              </p>
+
+              <h3 style="margin-top: 20px">Services</h3>
+              <div id="svc"></div>
+            </div>
+
+            <aside class="card sum" aria-live="polite">
+              <h3>Estimated price</h3>
+              <div class="big" id="out"></div>
+              <div id="brk"></div>
+              <p class="note" id="time"></p>
+              <p class="note">Illustrative demo pricing. Not a quote.</p>
+              <button class="btn full" id="use" type="button">
+                Use this in my booking
+              </button>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section id="results">
+        <div class="w">
+          <h2>See the difference</h2>
+          <p class="lead">
+            Drag the slider to compare a car before and after a full detail.
+            (Illustration, not a real photo.)
+          </p>
+
+          <div class="ba" id="ba">
+            <!-- Before layer -->
+            <svg viewBox="0 0 600 300" role="img" aria-label="Car before detailing">
+              <rect width="600" height="300" fill="#a9a396" />
+              <rect y="236" width="600" height="64" fill="#8b8579" />
+              <g style="--body: #8c7f6b; --glass: #5d6258; --rim: #6b6558">
+                <use href="#car" />
+              </g>
+              <g fill="rgba(70,52,30,0.45)">
+                <ellipse cx="170" cy="190" rx="48" ry="11" />
+                <ellipse cx="300" cy="196" rx="70" ry="9" />
+                <ellipse cx="440" cy="186" rx="52" ry="12" />
+                <ellipse cx="260" cy="150" rx="30" ry="7" />
+                <ellipse cx="500" cy="170" rx="22" ry="8" />
+                <circle cx="110" cy="176" r="6" />
+                <circle cx="372" cy="160" r="5" />
+                <circle cx="215" cy="170" r="4" />
+              </g>
+            </svg>
+
+            <!-- After layer -->
+            <svg
+              class="after"
+              viewBox="0 0 600 300"
+              role="img"
+              aria-label="Car after detailing"
+            >
+              <defs>
+                <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#cfe6ff" />
+                  <stop offset="1" stop-color="#eef6ff" />
+                </linearGradient>
+              </defs>
+              <rect width="600" height="300" fill="url(#sky)" />
+              <rect y="236" width="600" height="64" fill="#c8d2de" />
+              <g style="--body: #c62828; --glass: #1f3a56; --rim: #dfe6ee">
+                <use href="#car" />
+              </g>
+              <path
+                d="M200 100 Q300 78 420 94"
+                fill="none"
+                stroke="#fff"
+                stroke-opacity="0.55"
+                stroke-width="6"
+                stroke-linecap="round"
+              />
+              <path
+                d="M80 168 Q200 150 330 156"
+                fill="none"
+                stroke="#fff"
+                stroke-opacity="0.35"
+                stroke-width="5"
+                stroke-linecap="round"
+              />
+              <g fill="#fff">
+                <path d="M505 120 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4z" />
+                <path d="M98 140 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3z" />
+              </g>
+            </svg>
+
+            <div class="bar"></div>
+            <span class="lab l">After</span>
+            <span class="lab r">Before</span>
+          </div>
+
+          <input
+            class="slider"
+            id="slide"
+            type="range"
+            min="0"
+            max="100"
+            value="50"
+            aria-label="Compare before and after"
+          />
+        </div>
+      </section>
+
+      <section>
+        <div class="w">
+          <h2>Why drivers choose us</h2>
+          <p class="lead">Simple, fair and clear from start to finish.</p>
+          <div class="grid">
+            <div class="card">
+              <h3>Quote first</h3>
+              <p class="note">
+                You approve the price in writing before we touch your car.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Old parts returned</h3>
+              <p class="note">
+                Ask to see what we replaced. We’re happy to show you.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Done on time</h3>
+              <p class="note">
+                We tell you how long it will take and message you if that
+                changes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="book">
+        <div class="w">
+          <h2>Book a visit</h2>
+          <p class="lead">
+            Tell us about your vehicle and when you’d like to come in.
+          </p>
+          <div id="done"></div>
+          <form class="card" id="bf" novalidate>
+            <fieldset>
+              <legend>How would you like to do it?</legend>
+              <label class="ck">
+                <input type="radio" name="mode" value="drop" checked />Drop
+                off and collect later
+              </label>
+              <label class="ck">
+                <input type="radio" name="mode" value="wait" />I’ll wait
+              </label>
+              <div class="warn" id="waitnote" role="status" hidden></div>
+            </fieldset>
+
+            <div class="two">
+              <div>
+                <label for="bd">Day</label>
+                <select id="bd"></select>
+              </div>
+              <div>
+                <label for="bt">Arrival time</label>
+                <select id="bt">
+                  <option>7:30 to 9:00 am</option>
+                  <option>9:00 to 11:00 am</option>
+                  <option>11:00 am to 1:00 pm</option>
+                  <option>1:00 to 3:00 pm</option>
+                </select>
+              </div>
+            </div>
+
+            <label for="vh">Vehicle (year, make, model)</label>
+            <input id="vh" maxlength="60" placeholder="2018 Toyota Corolla" />
+
+            <div class="two">
+              <div>
+                <label for="nm">Full name</label>
+                <input id="nm" required maxlength="60" autocomplete="name" />
+              </div>
+              <div>
+                <label for="em">Email</label>
+                <input id="em" type="email" required autocomplete="email" />
+              </div>
+            </div>
+
+            <label for="nt">Notes</label>
+            <textarea id="nt" rows="4" maxlength="600"></textarea>
+
+            <div class="err" id="err" role="alert"></div>
+            <button class="btn" style="margin-top: 18px">Request booking</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="faq">
+        <div class="w">
+          <h2>Common questions</h2>
+          <details>
+            <summary>Is the estimate the final price?</summary>
+            <p>
+              No. It’s a guide. After we inspect your car we send a written
+              quote, and we never start without your approval.
+            </p>
+          </details>
+          <details>
+            <summary>Do you offer a warranty?</summary>
+            <p>
+              Yes. Repairs come with a 12-month parts and labor warranty.
+            </p>
+          </details>
+          <details>
+            <summary>How long does a full detail take?</summary>
+            <p>
+              Around three hours for most cars. Ceramic protection takes a
+              full day, so we recommend drop-off.
+            </p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <div class="pitch">
+      <div class="w">
+        <div>
+          <strong>Want a website for your workshop?</strong>
+          <p>
+            Demo site designed and built by <span id="devname"></span>. Clear,
+            quick to use and made to bring in bookings.
+          </p>
+        </div>
+        <a class="btn" id="devmail" href="#">Get a free quote</a>
+      </div>
+    </div>
+
+    <footer class="fo">
+      <div class="w">
+        © Gearhouse Auto Care. This is a demo business made for portfolio
+        purposes. Prices and details shown are fictional.
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
